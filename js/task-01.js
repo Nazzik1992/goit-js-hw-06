@@ -1,15 +1,12 @@
-const ulGen = document.getElementById("categories");
-console.log(`Number of categories: ${ulGen.children.length}`);
+const ulGen = document.querySelectorAll(".item");
+console.log(`Number of categories: ${ulGen.length}`);
 
-const title = ulGen.querySelectorAll('h2');
-const el = ulGen.querySelectorAll('ul');
+ulGen.forEach((item) => {
+    const title = item.firstElementChild.textContent;
 
-console.log(`Category: ${title[0].textContent}`);
-console.log(`Elements: ${el[0].children.length}`);
+    const elements = item.lastElementChild.children.length;
 
-console.log(`Category: ${title[1].textContent}`);
-console.log(`Elements: ${el[1].children.length}`);
+    console.log('Categori:', title);
+    console.log('Elements:', elements);
 
-console.log(`Category: ${title[2].textContent}`);
-console.log(`Elements: ${el[2].children.length}`);
-
+});
